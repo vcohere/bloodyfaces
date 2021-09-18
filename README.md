@@ -19,3 +19,11 @@ Remember to change the NFT Total Supply to the actual amount (3333).
 Keep a low total supply for development, or the tests will take forever.
 
 Change that supply in the unit tests too and run the tests for a final check.
+
+## Specs
+
+Anyone can mint a Bloody Face by calling mintBloodyFace.
+
+A user can only mint 1 NFT.
+
+TODO: Do not allow NFT transfer to a wallet that already owns a Bloody Face.
