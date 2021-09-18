@@ -8,31 +8,26 @@ contract("BloodyFace", function (accounts) {
     await BloodyFace.deployed();
     return assert.isTrue(true);
   });
-  it("owner should be able to mint a BloodyFace", async () => {
+  it("user should be able to mint a BloodyFace", async () => {
     const instance = await BloodyFace.new(),
-          amount = 10;
+          tokenURI = "#";
 
-    for (var i = 0; i < amount; i++) {
-      await instance.mintBloodyFace("#");
-    }
+    const mintingReturn = await instance.mintBloodyFace(tokenURI);
+    const tokenId = mintingReturn.logs[0].args.tokenId.toNumber();
 
     const balance = await instance.balanceOf.call(alice);
+    const tokenOwner = await instance.ownerOf.call(tokenId);
 
-    assert.equal(balance.valueOf(), amount);
+    assert.equal(balance.toNumber(), 1, "User balance should return 1.");
+    assert.equal(tokenOwner, alice, "NFT should be owned by the user.");
   });
-  it("non-owner should not be able to mint a BloodyFace", async () => {
-    const instance = await BloodyFace.new();
-
-    await expectRevert(instance.mintBloodyFace("#", {from: bob}), "Ownable: caller is not the owner");
-  });
-  it("owner should not be able to mint more than allowed supply", async () => {
+  it("user should not be able to mint more than one BloodyFace", async () => {
     const instance = await BloodyFace.new(),
-          amount = 10;
+          tokenURI = "#";
 
-    for (var i = 0; i < amount; i++) {
-      await instance.mintBloodyFace("#");
-    }
+    await instance.mintBloodyFace(tokenURI);
 
-    await expectRevert(instance.mintBloodyFace("#"), "All the Bloody Faces have been minted.");
+    await expectRevert(instance.mintBloodyFace(tokenURI), "You already own a Bloody Face.");
   });
+  // TODO : Create test to verify that users cannot create more than Total Supply.
 });
