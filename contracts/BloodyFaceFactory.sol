@@ -12,18 +12,20 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
   Counters.Counter private _tokenIdCounter;
 
+  uint256 private _totalSupply = 10;
+
   constructor() ERC721("BloodyFace", "BLDFC") {}
 
-  function mintBloodyFace(string memory tokenURI)
+  function mintBloodyFace(string memory _tokenURI)
     public
     onlyOwner
     returns (uint)
   {
-    require(_tokenIdCounter.current() < 3333, "All the Bloody Faces have been minted.");
+    require(_tokenIdCounter.current() < _totalSupply, "All the Bloody Faces have been minted.");
     uint256 newNftId = _tokenIdCounter.current();
 
     _safeMint(msg.sender, newNftId);
-    _setTokenURI(newNftId, tokenURI);
+    _setTokenURI(newNftId, _tokenURI);
     _tokenIdCounter.increment();
 
     return newNftId;
