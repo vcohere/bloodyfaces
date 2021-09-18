@@ -1,4 +1,4 @@
-# BloodyFaces Smart Contract
+# BloodyFaces Smart Contract 👊
 
 ## Development
 
