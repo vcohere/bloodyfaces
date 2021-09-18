@@ -1,5 +1,5 @@
-var BloodyFaces = artifacts.require("BloodyFaces");
+var BloodyFace = artifacts.require("BloodyFace");
 
 module.exports = async function(deployer) {
-  await deployer.deploy(BloodyFaces);
+  await deployer.deploy(BloodyFace);
 };
