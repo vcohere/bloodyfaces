@@ -1,5 +1,8 @@
 # BloodyFaces Smart Contract
 
+First install the local dependencies
+`npm install`
+
 Run the unit tests with `truffle test`
 
 To run the project :
