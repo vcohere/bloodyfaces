@@ -2,7 +2,7 @@ const {expectRevert} = require('@openzeppelin/test-helpers');
 const BloodyFace = artifacts.require("BloodyFace");
 
 contract("BloodyFace", function (accounts) {
-  let [alice, bob] = accounts;
+  let [alice, bob, charles] = accounts;
 
   it("should be deployed", async function () {
     await BloodyFace.deployed();
@@ -29,5 +29,13 @@ contract("BloodyFace", function (accounts) {
 
     await expectRevert(instance.mintBloodyFace(tokenURI), "You already own a Bloody Face.");
   });
-  // TODO : Create test to verify that users cannot create more than Total Supply.
+  it("users should not be able to mint more than total supply", async () => {
+    const instance = await BloodyFace.new(),
+          tokenURI = "#";
+
+    await instance.mintBloodyFace(tokenURI, {from: alice});
+    await instance.mintBloodyFace(tokenURI, {from: bob});
+
+    await expectRevert(instance.mintBloodyFace(tokenURI, {from: charles}), "All the Bloody Faces have been minted.");
+  });
 });

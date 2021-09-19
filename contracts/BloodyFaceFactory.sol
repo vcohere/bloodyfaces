@@ -12,7 +12,7 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
   Counters.Counter private _tokenIdCounter;
 
-  uint256 private _totalSupply = 10;
+  uint256 private _totalSupply = 2;
 
   constructor() ERC721("BloodyFace", "BLDFC") {}
 
