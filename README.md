@@ -12,6 +12,10 @@ To run the project :
 - Migrate the contract `truffle migrate`
 - Interact with the contract `truffle console`
 
+To run the website :
+- Go to client/
+- Run `yarn start`
+
 ## Before Deploying
 
 Remember to change the NFT Total Supply to the actual amount (3333).
