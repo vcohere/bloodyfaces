@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "@openzeppelin/test-helpers": "^0.5.13"
+  },
+  "scripts": {
+    "deploy": "cd client;yarn build;cd ..;firebase deploy"
   }
 }
