@@ -26,11 +26,7 @@ Change that supply in the unit tests too and run the tests for a final check.
 
 ## Deploying to Firebase
 
-You will need to build the client first.
-
-`cd client; yarn build`
-
-Then, simply run `firebase deploy`
+Just run `yarn deploy`
 
 ## Specs
 
