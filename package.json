@@ -6,6 +6,7 @@
     "@openzeppelin/test-helpers": "^0.5.13"
   },
   "scripts": {
-    "deploy": "cd client;yarn build;cd ..;firebase deploy"
+    "deploy": "cd client;yarn build;cd ..;firebase deploy",
+    "deploy-functions": "firebase deploy --only functions"
   }
 }

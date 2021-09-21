@@ -28,6 +28,8 @@ Change that supply in the unit tests too and run the tests for a final check.
 
 Just run `yarn deploy`
 
+If you only want to deploy the Firebase Functions, run `yarn deploy-functions`
+
 ## Specs
 
 Anyone can mint a Bloody Face by calling mintBloodyFace.
