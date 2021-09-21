@@ -26,6 +26,8 @@ Change that supply in the unit tests too and run the tests for a final check.
 
 ## Deploying to Firebase
 
+Access the API here : https://bloodyfaces-4dc6b.web.app/api/nft/0
+
 Just run `yarn deploy`
 
 If you only want to deploy the Firebase Functions, run `yarn deploy-functions`
