@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 
-import Index from './views/Index';
+import Index from './views/Index/Index';
 
 function App() {
   return (
