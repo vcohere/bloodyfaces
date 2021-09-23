@@ -10,8 +10,9 @@
 }
 
 #hero1 .title {
-  font-size: 4em;
+  font-size: 4.2em;
   font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 #hero1 .separator {
@@ -27,11 +28,24 @@
   font-size: 1.2em;
 }
 
+#hero1 .cta {
+  background-color: #B90808;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 35px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
 #menu a {
+  width: auto;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: bold;
   color: white;
+  font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 .vertical-center {

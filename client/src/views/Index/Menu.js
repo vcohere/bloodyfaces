@@ -6,9 +6,7 @@ import Col from "react-bootstrap/Col";
 class MenuElement extends Component {
   render() {
     return (
-      <Col md="2" className="p-3">
-        <a href="{this.props.anchor}">{this.props.title}</a>
-      </Col>
+      <a class="d-inline-flex px-5 py-3" href="{this.props.anchor}">{this.props.title}</a>
     )
   }
 }

@@ -2,6 +2,7 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const express = require("express");
 const bodyParser = require("body-parser");
+const fetch = require('node-fetch');
 const firebaseCredentials = require("./firebaseCredentials");
 
 admin.initializeApp(functions.config().firebase);
@@ -27,6 +28,23 @@ app.get('/nft/:nftId', (req, res) => {
     .catch(error => {
       res.status(400).send('Cannot get NFT : ${error}')
     });
+})
+
+app.get('/img/:nftId', (req, res) => {
+  const id = parseInt(req.params.nftId);
+
+  const baseAppUrl = 'bloodyfaces-787a9.appspot.com/';
+
+  const imgUrl = 'https://firebasestorage.googleapis.com/v0/b/' + baseAppUrl + 'o/' + id + '.jpg?alt=media';
+
+  fetch(imgUrl).then(actual => {
+    actual.headers.forEach((v, n) => res.setHeader(n, v));
+    actual.body.pipe(res);
+  })
+  .catch(err => {
+    console.error(err);
+    res.sendStatus(404);
+  });
 })
 
 exports.bloodyFacesApi = functions.https.onRequest(main);

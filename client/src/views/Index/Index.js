@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 import Menu from "./Menu";
 
@@ -21,6 +22,7 @@ class Index extends Component {
               And they mean business.<br />
               Only 3.333 available, and you’re early enough to mint your own right now.
             </p>
+            <Button variant="primary" className="cta">Mint your own BloodFace</Button>
           </Col>
         </Row>
       </Container>
