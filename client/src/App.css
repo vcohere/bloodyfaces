@@ -39,6 +39,85 @@
   font-family: 'Saira Semi Condensed', sans-serif;
 }
 
+#story {
+  background-color: #1A1A1A;
+  color: white;
+}
+
+#story h1 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#story h2 {
+  font-size: 1.5em;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#story p {
+  font-size: 0.9em;
+}
+
+#roadmap {
+  background-color: #860707;
+  color: white;
+}
+
+#roadmap h1 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+#roadmap h2 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  line-height: 0.6em;
+}
+
+#roadmap h3 {
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#roadmap p {
+  font-size: 0.9em;
+}
+
+#faq {
+  color: #1A1A1A;
+}
+
+#faq h1 {
+  font-size: 3em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+#faq p {
+  font-size: 0.9em;
+}
+
+#faq .accordion-item {
+  border-color: #1A1A1A;
+}
+
+#faq .accordion-header {
+  font-size: 1.4em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+#faq .accordion-body {
+  text-align: left;
+}
+
 #menu a {
   width: auto;
   text-decoration: none;
