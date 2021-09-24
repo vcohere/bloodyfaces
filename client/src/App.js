@@ -1,11 +1,28 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
 
-import Index from './views/Index/Index';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-function App() {
+import Index from './views/Index/Index';
+import Mint from './views/Mint/Mint';
+
+const App = () => {
   return (
-    <Index />
+    <Router>
+      <Switch>
+        <Route path="/mint">
+          <Mint />
+        </Route>
+        <Route path="/">
+          <Index />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 

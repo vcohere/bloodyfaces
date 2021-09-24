@@ -14,7 +14,7 @@ class MenuElement extends Component {
 class Menu extends Component {
   render() {
     return (
-      <Row className="justify-content-end text-uppercase" id="menu">
+      <Row className="justify-content-end text-uppercase mb-0" id="menu">
         <MenuElement anchor="#" title="Story" />
         <MenuElement anchor="#" title="Roadmap" />
         <MenuElement anchor="#" title="Faq" />

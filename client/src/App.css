@@ -1,11 +1,11 @@
 #hero1 {
   /* webpackIgnore: true */
-  background: url('./images/hero1.jpg') top left / cover no-repeat;
+  background: url('./images/hero1.png') top left / cover no-repeat;
   min-height: 100vh;
 }
 
 #hero1 .hero-text {
-  text-align: center;
+  text-align: left;
   color: white;
 }
 
@@ -29,6 +29,7 @@
 }
 
 #hero1 .cta {
+  display: block;
   background-color: #B90808;
   color: white;
   border: none;
@@ -37,6 +38,7 @@
   font-weight: bold;
   padding: 10px 35px;
   font-family: 'Saira Semi Condensed', sans-serif;
+  margin: auto;
 }
 
 #story {

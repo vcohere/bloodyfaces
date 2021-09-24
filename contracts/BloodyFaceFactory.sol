@@ -16,7 +16,7 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
   constructor() ERC721("BloodyFace", "BLDFC") {}
 
-  function mintBloodyFace(string memory _tokenURI)
+  function mintBloodyFace()
     public
     returns (uint256)
   {
@@ -25,6 +25,8 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
     _tokenIdCounter.increment();
     uint256 newNftId = _tokenIdCounter.current();
+
+    string memory _tokenURI = "#";
 
     _mint(msg.sender, newNftId);
     _setTokenURI(newNftId, _tokenURI);
