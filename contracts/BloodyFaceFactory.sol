@@ -12,7 +12,7 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
   Counters.Counter private _tokenIdCounter;
 
-  uint256 private _totalSupply = 5;
+  uint256 private _totalSupply = 3333;
 
   string private _apiUrl = "https://bloodyfaces.io/api/nft/";
 
