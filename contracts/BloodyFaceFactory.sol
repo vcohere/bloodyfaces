@@ -12,26 +12,54 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
 
   Counters.Counter private _tokenIdCounter;
 
-  uint256 private _totalSupply = 2;
+  uint256 private _totalSupply = 5;
+
+  string private _apiUrl = "https://bloodyfaces.io/api/nft/";
 
   constructor() ERC721("BloodyFace", "BLDFC") {}
 
-  function mintBloodyFace()
-    public
-    returns (uint256)
-  {
+  function mintBloodyFace() public returns (uint256) {
     require(_tokenIdCounter.current() < _totalSupply, "All the Bloody Faces have been minted.");
-    require(balanceOf(msg.sender) < 1, "You already own a Bloody Face.");
+    require(balanceOf(msg.sender) < 3, "You already own 3 Bloody Faces.");
 
-    _tokenIdCounter.increment();
     uint256 newNftId = _tokenIdCounter.current();
 
-    string memory _tokenURI = "#";
-
     _mint(msg.sender, newNftId);
-    _setTokenURI(newNftId, _tokenURI);
+    _setTokenURI(newNftId, string(abi.encodePacked(_apiUrl, _uint2str(_tokenIdCounter.current()))));
+
+    _tokenIdCounter.increment();
 
     return newNftId;
+  }
+
+  function setApiUrl(string memory _newUrl) public onlyOwner {
+    _apiUrl = _newUrl;
+  }
+
+  function getApiUrl() public view returns (string memory) {
+    return _apiUrl;
+  }
+
+  function _uint2str(uint _i) internal pure returns (string memory _uintAsString) {
+    if (_i == 0) {
+      return "0";
+    }
+    uint j = _i;
+    uint len;
+    while (j != 0) {
+      len++;
+      j /= 10;
+    }
+    bytes memory bstr = new bytes(len);
+    uint k = len;
+    while (_i != 0) {
+      k = k-1;
+      uint8 temp = (48 + uint8(_i - _i / 10 * 10));
+      bytes1 b1 = bytes1(temp);
+      bstr[k] = b1;
+      _i /= 10;
+    }
+    return string(bstr);
   }
 
   // The following functions are overrides required by Solidity.

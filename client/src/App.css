@@ -28,6 +28,11 @@
   font-size: 1.2em;
 }
 
+#hero1 a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #hero1 .cta {
   display: block;
   background-color: #B90808;
@@ -42,7 +47,7 @@
 }
 
 #story {
-  background-color: #1A1A1A;
+  background: url('./images/bg.jpg') top left / cover no-repeat;
   color: white;
 }
 
@@ -120,6 +125,42 @@
   text-align: left;
 }
 
+#mint-container {
+  /* webpackIgnore: true */
+  background: url('./images/hero1.png') top left / cover no-repeat;
+  min-height: 100vh;
+}
+
+#mint-container .frame {
+  height: 100vh;
+  background: url('./images/bg.jpg') top left / cover no-repeat;
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+#mint-container h1 {
+  font-size: 4.2em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#mint-container .tile-wrap {
+  position: relative;
+}
+
+#mint-container .spinner-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+#mint-container .spinner {
+  font-size: 2em;
+  animation: spin 1300ms ease-in-out infinite;
+}
+
+
 #menu a {
   width: auto;
   text-decoration: none;
@@ -137,4 +178,9 @@
 
 .red-accent {
   color: #B90808;
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
 }

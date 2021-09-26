@@ -3,6 +3,7 @@ const admin = require("firebase-admin");
 const express = require("express");
 const bodyParser = require("body-parser");
 const fetch = require('node-fetch');
+const cors = require('cors');
 const firebaseCredentials = require("./firebaseCredentials");
 
 admin.initializeApp(functions.config().firebase);
@@ -15,6 +16,8 @@ const main = express();
 main.use('/api', app);
 main.use(bodyParser.json());
 main.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(cors())
 
 app.get('/nft/:nftId', (req, res) => {
   // Passing req.params.nftId as a parameter could be a security issue
