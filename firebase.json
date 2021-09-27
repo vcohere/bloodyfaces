@@ -8,6 +8,10 @@
     ],
     "rewrites": [
       {
+        "source": "/mint",
+        "destination": "/index.html"
+      },
+      {
         "source": "/api/**",
         "function": "bloodyFacesApi"
       }

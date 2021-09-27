@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { newContextComponents } from "@drizzle/react-components";
-import SetString from "./SetString";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
+import { FiArrowLeft } from 'react-icons/fi';
 
+import MintAction from "./MintAction";
 import NftView from "./NftView";
 
 import imgTile from "../../images/tile.png";
@@ -43,12 +44,9 @@ class Page extends Component {
           return res.json()
         })
         .then((result) => {
-          console.log('fetched');
           nftsData.push(result);
 
           this.setState({ nftsData });
-
-          console.log(this.state.nftsData);
         })
     }
   }
@@ -69,8 +67,6 @@ class Page extends Component {
       }
     }
 
-    console.log(nfts);
-
     this.setState({ nfts })
 
     this.fetchMetadata();
@@ -90,23 +86,26 @@ class Page extends Component {
     const displaySupply = BloodyFace.totalSupply[this.state.supplyDataKey];
     const displayBalance = BloodyFace.balanceOf[this.state.balanceDataKey];
 
+    const progress = displaySupply ? (displaySupply.value * 100 / 3333) : 0;
+
     return (
       <div class="page">
         <Container fluid id="mint-container">
           <Row className="justify-content-start">
-            <Col md="6" className="frame p-5">
-              <h1 class="mt-5 mb-4">Mint your own <span class="red-accent">Bloody Face</span> now.</h1>
+            <Col className="banner d-md-none">
+              <a href="/">
+                <FiArrowLeft className="return mt-3" />
+              </a>
+            </Col>
+            <Col md="6" className="frame p-md-5 pb-4">
+              <h1 className="mt-md-5 mt-4 mb-4">Mint your own <span className="red-accent">Bloody Face</span> now.</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan ante sem, et ornare neque euismod in. Nulla volutpat pretium lectus quis condimentum. Donec faucibus ex nisl, at tincidunt odio semper finibus.
               </p>
 
-              <div class="text-center">{displaySupply && displaySupply.value} / 3.333 minted</div>
+              <ProgressBar striped variant="danger" animated now={progress} label={`${displaySupply && displaySupply.value} / 3333`} />
 
-              <ProgressBar striped variant="danger" animated now={10} />
-
-              <span class="red-accent">{displayBalance && displayBalance.value}</span>
-
-              <SetString drizzle={this.props.drizzle} drizzleState={this.props.drizzleState} />
+              <MintAction drizzle={this.props.drizzle} drizzleState={this.props.drizzleState} />
 
               <Row className="mt-5">
                 <NftView drizzle={this.props.drizzle} drizzleState={this.props.drizzleState} id={0} balance={displayBalance} />

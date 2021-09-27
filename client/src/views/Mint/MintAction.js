@@ -1,6 +1,9 @@
 import React from "react";
 
-class SetString extends React.Component {
+import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
+
+class MintAction extends React.Component {
   state = { stackId: null };
 
   setValue = () => {
@@ -10,7 +13,8 @@ class SetString extends React.Component {
     // let drizzle know we want to call the `set` method with `value`
     const stackId = contract.methods["mintBloodyFace"].cacheSend({
       from: drizzleState.accounts[0],
-      gas : 500000
+      gas : 500000,
+      value: drizzle.web3.utils.toWei('0.03','ether')
     });
 
     // save the `stackId` for later reference
@@ -28,19 +32,21 @@ class SetString extends React.Component {
     if (!txHash) return null;
 
     // otherwise, return the transaction status
-    return `Transaction status: ${transactions[txHash] && transactions[txHash].status}`;
+    let status = transactions[txHash] && transactions[txHash].status;
+
+    return `Transaction status: ${status ? status : 'Waiting...'}`;
   };
 
   render() {
     return (
-      <div>
-        <button onClick={this.setValue} type="button">
-          MINT
-        </button>
-        <div>{this.getTxStatus()}</div>
+      <div className="mt-4">
+        <Button onClick={this.setValue} variant="primary" className="mint-button">
+          MINT NOW
+        </Button>
+        {this.getTxStatus()}
       </div>
     );
   }
 }
 
-export default SetString;
+export default MintAction;

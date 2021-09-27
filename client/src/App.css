@@ -127,12 +127,12 @@
 
 #mint-container {
   /* webpackIgnore: true */
-  background: url('./images/hero1.png') top left / cover no-repeat;
+  background: url('./images/hero1.png') top right / cover no-repeat;
   min-height: 100vh;
 }
 
 #mint-container .frame {
-  height: 100vh;
+  min-height: 100vh;
   background: url('./images/bg.jpg') top left / cover no-repeat;
   color: white;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -144,8 +144,27 @@
   font-family: 'Saira Semi Condensed', sans-serif;
 }
 
+#mint-container .mint-button {
+  display: block;
+  background-color: #B90808;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 35px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  margin: auto;
+}
+
 #mint-container .tile-wrap {
   position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#mint-container .tile-wrap .img-fluid {
+  border-radius: 10px;
 }
 
 #mint-container .spinner-wrap {
@@ -158,6 +177,16 @@
 #mint-container .spinner {
   font-size: 2em;
   animation: spin 1300ms ease-in-out infinite;
+}
+
+#mint-container .banner {
+  height: 30vh;
+  background: url('./images/hero1.png') center center / cover no-repeat fixed;
+}
+
+#mint-container .return {
+  font-size: 2.5em;
+  color: white;
 }
 
 
