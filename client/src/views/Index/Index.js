@@ -4,12 +4,22 @@ import HeroSection from "./HeroSection";
 import StorySection from "./StorySection";
 import RoadmapSection from "./RoadmapSection";
 import FaqSection from "./FaqSection";
+import MobileMenu from "./MobileMenu";
 
 class Index extends Component {
+  state = {
+    showMobileMenu: false
+  };
+
+  burgerTap() {
+    this.setState({ showMobileMenu: true });
+  }
+
   render() {
     return (
       <div class="page">
-        <HeroSection drizzle={this.props.drizzle} drizzleState={this.props.drizzleState} />
+        <MobileMenu triggerOpen={this.state.showMobileMenu} />
+        <HeroSection />
         <StorySection />
         <RoadmapSection />
         <FaqSection />

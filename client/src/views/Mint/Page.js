@@ -4,7 +4,6 @@ import { newContextComponents } from "@drizzle/react-components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import { FiArrowLeft } from 'react-icons/fi';
 
@@ -17,64 +16,14 @@ const { ContractData, ContractForm } = newContextComponents;
 
 class Page extends Component {
   state = {
-    balance: null,
     supplyDataKey: null,
-    nfts: [],
-    nftsData: []
+    balanceDataKey: null
   };
 
-  async getBalance() {
+  componentDidMount() {
     const { drizzle } = this.props;
     const contract = drizzle.contracts.BloodyFace;
 
-    return await contract.methods.balanceOf(this.props.drizzleState.accounts[0]).call();
-  }
-
-  async fetchMetadata() {
-    const nfts = this.state.nfts;
-
-    if (nfts.length <= 0)
-      return;
-
-    let nftsData = [];
-
-    for (let i = 0; i < nfts.length; i++) {
-      fetch(nfts[i])
-        .then((res) => {
-          return res.json()
-        })
-        .then((result) => {
-          nftsData.push(result);
-
-          this.setState({ nftsData });
-        })
-    }
-  }
-
-  async getNftsMetadata() {
-    const { drizzle } = this.props;
-    const contract = drizzle.contracts.BloodyFace;
-
-    let balance = await this.getBalance();
-
-    let nfts = [];
-
-    if (balance) {
-      for (let i = 0; i < balance; i++) {
-        let nftId = await contract.methods.tokenOfOwnerByIndex(this.props.drizzleState.accounts[0], i).call();
-
-        nfts.push(await contract.methods.tokenURI(nftId).call());
-      }
-    }
-
-    this.setState({ nfts })
-
-    this.fetchMetadata();
-  }
-
-  async componentDidMount() {
-    const { drizzle } = this.props;
-    const contract = drizzle.contracts.BloodyFace;
     let supplyDataKey = contract.methods["totalSupply"].cacheCall();
     let balanceDataKey = contract.methods["balanceOf"].cacheCall(this.props.drizzleState.accounts[0]);
 
@@ -89,7 +38,7 @@ class Page extends Component {
     const progress = displaySupply ? (displaySupply.value * 100 / 3333) : 0;
 
     return (
-      <div class="page">
+      <div className="page">
         <Container fluid id="mint-container">
           <Row className="justify-content-start">
             <Col className="banner d-md-none">

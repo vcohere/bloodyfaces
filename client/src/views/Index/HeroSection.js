@@ -14,12 +14,12 @@ class HeroSection extends Component {
       <Container fluid id="hero1">
         <Menu />
         <Row className="justify-content-start hero-text pt-5">
-          <Col lg="5" className="offset-lg-1 pt-5">
-            <p class="title">
-              THE BLOODY FACES HAVE <span class="red-accent">DROPPED</span>.
+          <Col md="8" lg="5" className="offset-md-1 pt-md-5 pb-4">
+            <p className="title">
+              THE BLOODY FACES HAVE <span className="red-accent">DROPPED</span>.
             </p>
-            <div class="separator"></div>
-            <p class="subtitle">
+            <div className="separator"></div>
+            <p className="subtitle">
               And they mean business.<br />
               Only 3.333 available, and you’re early enough to mint your own right now.
             </p>

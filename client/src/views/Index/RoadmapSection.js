@@ -13,7 +13,7 @@ class RoadmapSection extends Component {
             <Col md="12" className="text-center mb-5">
               <h1>The Bloody Roadmap</h1>
             </Col>
-            <Col md="3" className="text-center px-3">
+            <Col md="3" className="text-center px-3 mb-4">
               <h2>Q1</h2>
               <h3>2021</h3>
               <p>
@@ -21,7 +21,7 @@ class RoadmapSection extends Component {
                 And another really cool thing.
               </p>
             </Col>
-            <Col md="3" className="text-center px-3">
+            <Col md="3" className="text-center px-3 mb-4">
               <h2>Q2</h2>
               <h3>2021</h3>
               <p>
@@ -29,7 +29,7 @@ class RoadmapSection extends Component {
                 And another really cool thing.
               </p>
             </Col>
-            <Col md="3" className="text-center px-3">
+            <Col md="3" className="text-center px-3 mb-4">
               <h2>Q3</h2>
               <h3>2021</h3>
               <p>
@@ -37,7 +37,7 @@ class RoadmapSection extends Component {
                 And another really cool thing.
               </p>
             </Col>
-            <Col md="3" className="text-center px-3">
+            <Col md="3" className="text-center px-3 mb-4">
               <h2>Q4</h2>
               <h3>2021</h3>
               <p>

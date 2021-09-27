@@ -1,9 +1,14 @@
 import React, { Component } from "react";
 
 import Page from "./Page";
+import Metamask from "./Metamask";
 
 import { DrizzleContext } from "@drizzle/react-plugin";
 import { Drizzle } from "@drizzle/store";
+import Button from "react-bootstrap/Button";
+
+import imgMetamask from "../../images/metamask.png";
+
 import drizzleOptions from "./drizzleOptions";
 
 const drizzle = new Drizzle(drizzleOptions);
@@ -17,10 +22,7 @@ const Menu = () => {
 
           if (!initialized || drizzleState.web3.status === 'failed') {
             return (
-              <div className="loading-text">
-              <div>Connect Metamask to start the app</div>
-              <div>This app works on the Ropsten Testnet</div>
-              </div>
+              <Metamask />
             )
           }
 
