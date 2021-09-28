@@ -14,7 +14,7 @@ class HeroSection extends Component {
       <Container fluid id="hero1">
         <Menu />
         <Row className="justify-content-start hero-text pt-5">
-          <Col md="8" lg="5" className="offset-md-1 pt-md-5 pb-4">
+          <Col md="8" lg="5" className="offset-md-1 pt-md-5 pb-4 mt-5 mt-md-0">
             <p className="title">
               THE BLOODY FACES HAVE <span className="red-accent">DROPPED</span>.
             </p>

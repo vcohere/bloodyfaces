@@ -125,6 +125,13 @@
   text-align: left;
 }
 
+#faq .blood-stain {
+  position: absolute;
+  bottom: -150px;
+  right: 2vw;
+  max-width: 600px;
+}
+
 #mint-container {
   /* webpackIgnore: true */
   background: url('./images/hero1.png') top right / cover no-repeat;
@@ -282,6 +289,10 @@
 
 .red-accent {
   color: #B90808;
+}
+
+@media (max-width: 768px) {
+
 }
 
 @keyframes spin {
