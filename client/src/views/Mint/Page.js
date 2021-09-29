@@ -46,7 +46,7 @@ class Page extends Component {
                 <FiArrowLeft className="return mt-3" />
               </a>
             </Col>
-            <Col md="6" className="frame p-md-5 pb-4">
+            <Col md="6" className="frame p-md-5 pb-4 overflow-auto">
               <h1 className="mt-md-5 mt-4 mb-4">Mint your own <span className="red-accent">Bloody Face</span> now.</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer accumsan ante sem, et ornare neque euismod in. Nulla volutpat pretium lectus quis condimentum. Donec faucibus ex nisl, at tincidunt odio semper finibus.

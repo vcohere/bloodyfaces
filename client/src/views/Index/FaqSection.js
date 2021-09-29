@@ -11,7 +11,7 @@ import imgBloodStain from "../../images/blood-stain.png";
 class FaqSection extends Component {
   render() {
     return (
-      <div className="position-relative overflow-hidden">
+      <div className="position-relative">
         <Container fluid id="faq" className="px-0 pb-5">
           <img src={imgBloodHorizontal} className="img-fluid" />
           <Container>
@@ -25,7 +25,7 @@ class FaqSection extends Component {
                 <Accordion className="mt-5">
                   <Accordion.Item eventKey="0">
                     <Accordion.Header>WHERE CAN I SEE MY NFT ?</Accordion.Header>
-                    <Accordion.Body>
+                    <Accordion.Body className="bg-white">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
                       veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
