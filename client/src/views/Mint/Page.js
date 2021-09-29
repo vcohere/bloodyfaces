@@ -10,10 +10,6 @@ import { FiArrowLeft } from 'react-icons/fi';
 import MintAction from "./MintAction";
 import NftView from "./NftView";
 
-import imgTile from "../../images/tile.png";
-
-const { ContractData, ContractForm } = newContextComponents;
-
 class Page extends Component {
   state = {
     supplyDataKey: null,

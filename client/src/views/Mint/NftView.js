@@ -14,7 +14,6 @@ class NftView extends Component {
 
   async componentDidUpdate() {
     const { drizzle } = this.props;
-    const { BloodyFace } = this.props.drizzleState.contracts;
     const contract = drizzle.contracts.BloodyFace;
 
     let balance = this.props.balance && this.props.balance.value;
@@ -22,7 +21,7 @@ class NftView extends Component {
     // If the previous balance saved in the state is different than current balance
     // It means that the user minted a new NFT, so we keep going
     // If it's the same balance, we return; to avoid an infinite loop
-    if (balance != this.state.previousBalance) {
+    if (balance !== this.state.previousBalance) {
       this.setState({ previousBalance: balance });
     }
     else {

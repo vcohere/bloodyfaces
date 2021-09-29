@@ -1,13 +1,10 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Page from "./Page";
 import Metamask from "./Metamask";
 
 import { DrizzleContext } from "@drizzle/react-plugin";
 import { Drizzle } from "@drizzle/store";
-import Button from "react-bootstrap/Button";
-
-import imgMetamask from "../../images/metamask.png";
 
 import drizzleOptions from "./drizzleOptions";
 
