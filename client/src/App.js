@@ -8,14 +8,14 @@ import {
 } from "react-router-dom";
 
 import Index from './views/Index/Index';
-import Mint from './views/Mint/Mint';
+import MintWrap from './views/Mint/MintWrap';
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/mint">
-          <Mint />
+          <MintWrap />
         </Route>
         <Route path="/">
           <Index />

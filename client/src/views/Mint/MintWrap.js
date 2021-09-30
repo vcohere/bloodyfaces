@@ -1,16 +1,16 @@
 import React from "react";
 
-import Page from "./Page";
 import Metamask from "./Metamask";
+import MintContent from "./MintContent";
 
-import { DrizzleContext } from "@drizzle/react-plugin";
 import { Drizzle } from "@drizzle/store";
+import { DrizzleContext } from "@drizzle/react-plugin";
 
 import drizzleOptions from "./drizzleOptions";
 
 const drizzle = new Drizzle(drizzleOptions);
 
-const Menu = () => {
+const MintWrap = () => {
   return (
     <DrizzleContext.Provider drizzle={drizzle}>
       <DrizzleContext.Consumer>
@@ -24,7 +24,7 @@ const Menu = () => {
           }
 
           return (
-            <Page drizzle={drizzle} drizzleState={drizzleState} />
+            <MintContent drizzle={drizzle} drizzleState={drizzleState} />
           )
         }}
         </DrizzleContext.Consumer>
@@ -32,4 +32,4 @@ const Menu = () => {
   )
 }
 
-export default Menu;
+export default MintWrap;

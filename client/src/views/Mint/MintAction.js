@@ -1,67 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
 
-class MintAction extends React.Component {
-  state = {
-    stackId: null,
-    showAlert: false
-  };
+const MintAction = (props) => {
+  const { drizzle, drizzleState } = props;
+  const contract = drizzle.contracts.BloodyFace;
 
-  mintNft = () => {
-    const { drizzle, drizzleState } = this.props;
-    const contract = drizzle.contracts.BloodyFace;
+  const [stackId, setStackId] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertType, setAlertType] = useState("dark");
+  const [transactionStatus, setTransactionStatus] = useState("");
 
-    // let drizzle know we want to call the `mintBloodyFace` method with `value`
-    const stackId = contract.methods["mintBloodyFace"].cacheSend({
+  useEffect(() => {
+    getTxStatus();
+  }, [drizzleState.transactions]);
+
+  const mintNft = () => {
+    setStackId(contract.methods["mintBloodyFace"].cacheSend({
       from: drizzleState.accounts[0],
-      gas : 500000,
-      value: drizzle.web3.utils.toWei('0.03','ether')
-    });
+      gas: 500000,
+      value: drizzle.web3.utils.toWei("0.03", "ether")
+    }));
 
-    let showAlert = true;
-
-    // save the `stackId` for later reference
-    this.setState({ stackId, showAlert });
+    getTxStatus();
+    setShowAlert(true);
   };
 
-  getTxStatus = () => {
-    // get the transaction states from the drizzle state
-    const { transactions, transactionStack } = this.props.drizzleState;
+  const getTxStatus = () => {
+    const { transactions, transactionStack } = drizzleState;
+    const txHash = transactionStack[stackId];
 
-    // get the transaction hash using our saved `stackId`
-    const txHash = transactionStack[this.state.stackId];
-
-    // if transaction hash does not exist, don't display anything
     if (!txHash) return null;
 
-    // otherwise, return the transaction status
     let status = transactions[txHash] && transactions[txHash].status;
 
-    return `Transaction status: ${status ? status : 'Waiting...'}`;
+    if (status === "success")
+      setAlertType("success");
+
+    setTransactionStatus(`Transaction status: ${status ? status : 'Waiting...'}`);
   };
 
-  hideAlert = () => {
-    this.setState({ showAlert: false });
+  const hideAlert = () => {
+    setShowAlert(false);
+    setAlertType("dark");
   };
 
-  render() {
-    const { showAlert } = this.state;
+  return (
+    <div className="mt-4">
+      <Button onClick={mintNft} variant="primary" className="mint-button">
+        MINT NOW
+      </Button>
+      {showAlert &&
+        <Alert variant={alertType} className="mt-4" onClose={() => hideAlert()} dismissible>
+          {transactionStatus}
+        </Alert>
+      }
+    </div>
+  );
+};
 
-    return (
-      <div className="mt-4">
-        <Button onClick={this.mintNft} variant="primary" className="mint-button">
-          MINT NOW
-        </Button>
-        {showAlert &&
-          <Alert variant="dark" className="mt-4" onClose={() => this.hideAlert()} dismissible>
-            {this.getTxStatus()}
-          </Alert>
-        }
-      </div>
-    );
-  }
-}
-
-export default MintAction;
+export default React.memo(MintAction);
