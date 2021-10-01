@@ -14,17 +14,15 @@ class HeroSection extends Component {
         <Menu />
         <Row className="justify-content-start hero-text pt-5">
           <Col md="8" lg="5" className="offset-md-1 pt-md-5 pb-4 mt-5 mt-md-0">
-            <p className="title">
+            <h1>
               THE BLOODY FACES HAVE <span className="red-accent">DROPPED</span>.
-            </p>
+            </h1>
             <div className="separator"></div>
-            <p className="subtitle">
+            <p>
               And they mean business.<br />
               Only 3.333 available, and you’re early enough to mint your own right now.
             </p>
-            <a href="/mint">
-              <Button variant="primary" className="cta">Mint your own Bloody Face</Button>
-            </a>
+            <Button variant="primary" href="/mint" className="cta">Mint your own Bloody Face</Button>
           </Col>
         </Row>
       </Container>

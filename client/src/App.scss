@@ -1,0 +1,282 @@
+@import 'sass/animations';
+@import 'sass/global.scss';
+@import 'sass/typography';
+@import 'sass/variables';
+
+#hero1 {
+  background: url('./images/hero1.png') center center / cover no-repeat;
+  min-height: 100vh;
+
+  .hero-text {
+    text-align: left;
+    color: white;
+  }
+
+  h1 {
+    font-size: 4.2em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  .separator {
+    width: 100px;
+    height: 5px;
+    background-color: #B90808;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .cta {
+    display: block;
+    margin: auto;
+  }
+}
+
+#story {
+  background: url('./images/bg.jpg') top left / cover no-repeat;
+  color: $light-color;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+#roadmap {
+  background-color: $darker-primary-color;
+  color: white;
+
+  h1, h2 {
+    font-size: 3em;
+  }
+
+  h2 {
+    line-height: 0.6em;
+  }
+
+  h3 {
+    font-size: 2em;
+  }
+}
+
+#faq {
+  color: $dark-color;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .accordion-item {
+    border-color: $dark-color;
+  }
+
+  .accordion-header {
+    font-size: 1.4em;
+  }
+
+  .accordion-body {
+    text-align: left;
+  }
+
+  .blood-stain {
+    position: absolute;
+    bottom: -150px;
+    right: 2vw;
+    z-index: -1;
+    max-width: 600px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+#team {
+  color: $dark-color;
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+    color: $primary-color;
+  }
+
+  h3 {
+    font-size: 1.5em;
+  }
+
+  .img-wrap {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    .profile-img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      min-width: 100%;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+#mint-container {
+  background: url('./images/hero1.png') top right / cover no-repeat;
+  min-height: 100vh;
+
+  .frame {
+    min-height: 100vh;
+    background: url('./images/bg.jpg') top left / cover no-repeat;
+    color: $light-color;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  }
+
+  h1 {
+    font-size: 4.2em;
+  }
+
+  .mint-button {
+    display: block;
+    margin: auto;
+  }
+
+  .tile-wrap {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .img-fluid {
+      border-radius: 10px;
+    }
+  }
+
+  .spinner-wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    .spinner {
+      font-size: 2em;
+      animation: spin 1300ms ease-in-out infinite;
+    }
+  }
+
+  .banner {
+    height: 30vh;
+    background: url('./images/hero1.png') center center / cover no-repeat fixed;
+  }
+
+  .return {
+    font-size: 2.5em;
+    color: white;
+  }
+}
+
+#menu a {
+  width: auto;
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: white;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#burger-icon, #close-icon {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  width: auto;
+  color: white;
+  font-size: 2.5em;
+}
+
+#close-icon {
+  color: #B90808;
+}
+
+#mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  color: #1a1a1a;
+  background-color: #fafafa;
+  transition: left 300ms ease-in-out;
+}
+
+#mobile-menu.active {
+  left: 0;
+}
+
+#mobile-menu a {
+  color: #1a1a1a;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.8em;
+  font-weight: bold;
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+
+#mobile-menu .button {
+  display: block;
+  background-color: #B90808;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 35px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  margin: auto;
+}
+
+#metamask {
+  background: url('./images/hero1.png') center center / cover no-repeat;
+  min-height: 100vh;
+}
+
+#metamask .frame {
+  min-height: 100vh;
+  background: url('./images/bg.jpg') top left / cover no-repeat;
+  color: white;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+#metamask .button {
+  display: block;
+  background-color: #B90808;
+  color: white;
+  border: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 35px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+
+}
+
+@keyframes spin {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(359deg);}
+}

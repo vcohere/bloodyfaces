@@ -1,0 +1,30 @@
+@import 'variables';
+
+h1, h2, h3 {
+  font-family: 'Saira Semi Condensed', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.red-accent {
+  color: $primary-color;
+}
+
+.btn.btn-primary {
+  background-color: $primary-color;
+  color: $light-color;
+  border: none;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px 35px;
+  font-family: 'Saira Semi Condensed', sans-serif;
+
+  &:hover, &:active {
+    background-color: $darker-primary-color;
+  }
+}
