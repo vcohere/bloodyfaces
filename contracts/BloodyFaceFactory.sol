@@ -41,6 +41,17 @@ contract BloodyFace is ERC721, ERC721Enumerable, ERC721URIStorage, Ownable {
     return _apiUrl;
   }
 
+  function getBalance() public view returns (uint256) {
+    return address(this).balance;
+  }
+
+  function withdrawFunds() public onlyOwner {
+    uint256 balance = getBalance();
+
+    payable(msg.sender).transfer(balance);
+    emit Transfer(address(this), msg.sender, balance);
+  }
+
   function _uint2str(uint _i) internal pure returns (string memory _uintAsString) {
     if (_i == 0) {
       return "0";
