@@ -6,18 +6,18 @@ import Col from "react-bootstrap/Col";
 import Accordion from "react-bootstrap/Accordion";
 
 import imgBloodHorizontal from "../../images/blood-horizontal.png";
-import imgBloodStain from "../../images/blood-stain.png";
+import imgSplatRight from "../../images/blood-splat-right.png";
 
 class FaqSection extends Component {
   render() {
     return (
       <div className="position-relative">
         <Container fluid id="faq" className="px-0 pb-5">
-          <img src={imgBloodHorizontal} className="img-fluid" />
+          <img src={imgBloodHorizontal} className="img-fluid blood-drop" />
+          <img src={imgSplatRight} className="blood-stain-right" />
           <Container>
             <Row className="justify-content-center py-5">
               <Col lg="8" md="10" className="text-center faq-content">
-                <img src={imgBloodStain} className="blood-stain" />
                 <h1 className="mb-4 mt-3">Any questions ?</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut turpis ipsum, dignissim quis laoreet sed, iaculis non tellus. Suspendisse ipsum ante, condimentum venenatis ex id, lacinia consectetur sapien. Curabitur placerat nibh eu faucibus ultrices. Maecenas elementum tortor imperdiet lacus euismod convallis. Donec placerat scelerisque sodales. Integer quis semper augue. Maecenas ut velit justo. In vehicula mauris magna, a luctus turpis viverra non. Nam facilisis in odio nec auctor. Praesent venenatis hendrerit metus, at aliquam nibh feugiat sit amet. Nunc at molestie urna, at luctus lacus. Duis dictum felis auctor, interdum leo ut, venenatis quam.

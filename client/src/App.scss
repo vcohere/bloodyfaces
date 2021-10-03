@@ -68,6 +68,10 @@
 #faq {
   color: $dark-color;
 
+  .blood-drop {
+    margin-bottom: -14vw;
+  }
+
   h1 {
     font-size: 3em;
   }
@@ -84,12 +88,12 @@
     text-align: left;
   }
 
-  .blood-stain {
+  .blood-stain-right {
     position: absolute;
-    bottom: -150px;
-    right: 2vw;
+    bottom: 0;
+    right: 0;
     z-index: -1;
-    max-width: 600px;
+    max-width: 500px;
     pointer-events: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -111,6 +115,18 @@
 
   h3 {
     font-size: 1.5em;
+  }
+
+  .blood-stain-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    max-width: 500px;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
 
   .img-wrap {
